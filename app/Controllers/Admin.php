@@ -4,12 +4,12 @@ namespace App\Controllers;
 
 class Admin extends BaseController
 {
-    public function contact(): string
+    public function dashboard(): string
     {
         if (!session()->get('is_admin')) {
-            return redirect()->to('/admin-login'); // redirige si pas admin
+            return redirect()->to('/login'); // redirige si pas admin
         }
 
-        return view('admin'); // affiche la page admin si connecté
+        return view('/admin'); // affiche la page admin si connecté
     }
 }
