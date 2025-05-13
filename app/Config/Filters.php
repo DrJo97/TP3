@@ -34,7 +34,8 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
-        'isLoggedIn'    => isLoggedIn::class
+        'isLoggedIn'    => isLoggedIn::class,
+        'adminauth'     => \App\Filters\AdminAuth::class,
     ];
 
     /**
@@ -107,4 +108,5 @@ class Filters extends BaseFilters
     public array $filters = [
         'isLoggedIn' => [ 'before' =>['home','home/*',]]
     ];
+
 }

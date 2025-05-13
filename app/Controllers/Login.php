@@ -1,27 +1,35 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Models\UserModel;
+
 class Login extends BaseController
 {
     public function index(): string
     {
         return view('login');
     }
-    public function attemptlogin()
+
+    public function attemptLogin()
     {
-        $usermodel = new \App\Models\UserModel();
+        // Récupération des données du formulaire
+        $login = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
 
-        $userfetched = $usermodel ->where('matricule_abonne', $this->request-> getPost('username'))->first();
-        
-        if($this ->request ->getPost('password') == $userfetched['nom_abonne']){
+        // Vérifie si c'est l'admin (via constantes)
+        if ($login === APP_ADMIN_LOGIN && $password === APP_ADMIN_PASSWORD) {
+            return redirect()->to('/admin'); // ou autre page admin
+        }
 
-            return "login ok";
+        // Sinon, vérifie si c’est un abonné
+        $usermodel = new UserModel();
+        $userfetched = $usermodel->where('matricule_abonne', $login)->first();
 
+        if ($userfetched && $password === $userfetched['nom_abonne']) {
+            return redirect()->to('/home'); // ou page utilisateur
         } else {
             return "login ko";
         }
-
-    
-
     }
 }
