@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Admin</title>
+  <title>Interface Admin</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #121212;
-      color:rgb(255, 255, 253); /* Doré */
+      color: rgb(255, 255, 253);
     }
 
     header {
@@ -39,8 +39,8 @@
 
     .sidebar button {
       background-color: transparent;
-      border: 1px solidrgb(209, 142, 111);
-      color:rgb(209, 142, 111);
+      border: 1px solid rgb(209, 142, 111);
+      color: rgb(209, 142, 111);
       padding: 10px;
       margin: 10px 0;
       width: 100%;
@@ -62,44 +62,31 @@
     .search-bar {
       background-color: #2A2A2A;
       border: none;
-      color:rgb(228, 227, 221);
+      color: rgb(228, 227, 221);
       padding: 8px;
       width: 300px;
     }
-</style>
+  </style>
 </head>
 <body>
   <header>
-    <h1>Page </h1>
+    <h1>Interface Administrateur</h1>
     <input type="text" class="search-bar" placeholder="Recherche...">
   </header>
 
   <div class="container">
     <div class="sidebar">
-      <button onclick="showContent('abonnes')">Gestion des abonnés</button>
-      <button onclick="showContent('livres')">Gestion des livres</button>
-      <button onclick="showContent('exemplaires')">Gestion des exemplaires</button>
-      <button onclick="showContent('emprunts')">Gestion des emprunts</button>
-      <button onclick="showContent('retours')">Gestion des retours</button>
-      <button onclick="showContent('demandes')">Gestion des demandes</button>
+      <button onclick="location.href='/adminabonnes'">Gestion des abonnés</button>
+      <button onclick="location.href='/adminlivres'">Gestion des livres</button>
+      <button onclick="location.href='/adminexemplaires'">Gestion des exemplaires</button>
+      <button onclick="location.href='/emprunt'">Gestion des emprunts</button>
+      <button onclick="location.href='/adminretours'">Gestion des retours</button>
+      <button onclick="location.href='/admindemandes'">Gestion des demandes</button>
     </div>
-    <div class="content" id="mainContent">
+    <div class="content">
       <p>Bienvenue sur l'interface administrateur de la bibliothèque.</p>
+      <p>Utilisez le menu à gauche pour accéder aux différentes fonctionnalités.</p>
     </div>
   </div>
-
-  <script>
-    function showContent(section) {
-      const content = {
-        'abonnes': '<h2>Gestion des abonnés</h2><p>Ici vous pouvez consulter, ajouter ou modifier les abonnés.</p>',
-        'livres': '<h2>Gestion des livres</h2><p>Ajoutez un livre avec son auteur et mots-clés si nécessaire.</p>',
-        'exemplaires': '<h2>Gestion des exemplaires</h2><p>Ajoutez ou consultez les exemplaires existants.</p>',
-        'emprunts': '<h2>Gestion des emprunts</h2><p>Gérez les emprunts des livres.</p>',
-        'retours': '<h2>Gestion des retours</h2><p>Suivez les retours de livres.</p>',
-        'demandes': '<h2>Gestion des demandes</h2><p>Consultez et traitez les demandes des usagers.</p>'
-      };
-      document.getElementById('mainContent').innerHTML = content[section];
-    }
-  </script>
 </body>
 </html>

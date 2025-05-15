@@ -13,7 +13,7 @@ class UserModel extends Model
 
     protected $returnType       = 'array' ;
 
-    protected $allowedFileds = [
+    protected $allowedFields = [
         'matricule_abonne',
         'nom_abonne',
         'date_naissance_abonne',
