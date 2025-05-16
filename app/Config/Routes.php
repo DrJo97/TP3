@@ -30,5 +30,10 @@ $routes->get('/abonne/infos', 'AbonneInfos::index');
 $routes->get('/adminemprunt', 'AdminEmprunt::index');
 $routes->post('/adminempruntenregistrer', 'AdminEmprunt::enregistrer');
 $routes->get('/adminempruntsupprimer', 'AdminEmprunt::supprimer/$1');
+$routes->get('/abonne/emprunts', 'AbonneEmprunt::index');
+$routes->post('/abonne/emprunts/demander', 'AbonneEmprunt::demander');
+$routes->get('/admindemandes', 'AdminDemandes::index');
+$routes->get('/admindemandes/valider/(:num)', 'AdminDemandes::valider/$1');
+$routes->get('/admindemandes/supprimer/(:num)', 'AdminDemandes::supprimer/$1');
 
 
