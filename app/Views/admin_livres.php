@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des abonnés</title>
+    <title>Liste des Livres</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,9 +13,10 @@
             color: #333;
         }
         table {
-            width: 60%;
+            width: 90%;
             border-collapse: collapse;
             background-color: white;
+            margin-top: 20px;
         }
         th, td {
             border: 1px solid #ccc;
@@ -37,40 +38,33 @@
 </head>
 <body>
 
-    <h1>📚 Abonnés enregistrés</h1>
+    <h1>📚 Livres enregistrés</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Matricule</th>
-                <th>Nom</th>
+                <th>Code catalogue</th>
+                <th>Titre</th>
+                <th>Thème</th>
+                <th>État</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($abonnes as $abonne): ?>
+            <?php foreach ($livres as $livre): ?>
                 <tr>
-                    <td><?= esc($abonne['matricule_abonne']) ?></td>
-                    <td><?= esc($abonne['nom_abonne']) ?></td>
-                     <td>
- <td>
-  <a href="/adminabonneedit/<?= $abonne['matricule_abonne'] ?>">✏️ Modifier</a>
-  |
-  <a href="/adminabonnedelete/<?= $abonne['matricule_abonne'] ?>" onclick="return confirm('Supprimer cet abonné ?')">🗑 Supprimer</a>
-</td>
-
-</td>
-
+                    <td><?= esc($livre['code_catalogue']) ?></td>
+                    <td><?= esc($livre['titre_livre']) ?></td>
+                    <td><?= esc($livre['theme_livre']) ?></td>
+                    <td><?= esc($livre['etat_livre']) ?></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
-       
     </table>
 
     <div class="actions">
         <button onclick="location.href='/admin'">⬅ Retour admin</button>
-        <button onclick="location.href='/adminabonneadd'">➕ Ajouter un abonné</button>
+        <button onclick="location.href='/adminlivresadd'">➕ Ajouter un livre</button>
     </div>
 
-   
 </body>
 </html>

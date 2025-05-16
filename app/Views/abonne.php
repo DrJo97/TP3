@@ -37,19 +37,19 @@
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     }
 
-    .sidebar button {
+    .sidebar a {
+      display: block;
+      text-decoration: none;
       background-color: transparent;
       border: 1px solid rgb(209, 142, 111);
       color: rgb(209, 142, 111);
       padding: 10px;
       margin: 10px 0;
-      width: 100%;
-      cursor: pointer;
       font-size: 1em;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .sidebar button:hover {
+    .sidebar a:hover {
       background-color: #FFD700;
       color: #121212;
     }
@@ -76,27 +76,15 @@
 
   <div class="container">
     <div class="sidebar">
-      <button onclick="showContent('livres')">📚 Liste des livres</button>
-      <button onclick="showContent('disponibles')">📖 Exemplaires disponibles</button>
-      <button onclick="showContent('emprunts')">📘 Mes emprunts</button>
-      <button onclick="showContent('infos')">👤 Mes infos</button>
-      <button onclick="location.href='/abonne-logout'">🚪 Déconnexion</button>
+      <a href="/abonne/livres">📚 Liste des livres</a>
+      <a href="/abonne/exemplaires">📖 Exemplaires disponibles</a>
+      <a href="/abonne/emprunts">📘 Mes emprunts</a>
+      <a href="/abonne/infos">👤 Mes infos</a>
+<button onclick="location.href='/abonne/logout'">🚪 Déconnexion</button>
     </div>
-    <div class="content" id="mainContent">
+    <div class="content">
       <p>Bienvenue sur votre espace abonné.</p>
     </div>
   </div>
-
-  <script>
-    function showContent(section) {
-      const content = {
-        'livres': '<h2>Liste des livres</h2><p>Chargement des livres disponibles...</p>',
-        'disponibles': '<h2>Exemplaires disponibles</h2><p>Chargement des exemplaires disponibles à l’emprunt...</p>',
-        'emprunts': '<h2>Mes emprunts</h2><p>Chargement de vos emprunts...</p>',
-        'infos': '<h2>Mes informations</h2><p>Chargement de vos infos personnelles...</p>'
-      };
-      document.getElementById('mainContent').innerHTML = content[section];
-    }
-  </script>
 </body>
 </html>
