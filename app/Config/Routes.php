@@ -27,6 +27,8 @@ $routes->get('/adminabonnedelete/(:num)', 'AdminAbonneEdit::delete/$1');
 $routes->get('/abonne/livres', 'AbonneLivres::index');
 $routes->get('/abonne/exemplaires', 'AbonneExemplaire::index');
 $routes->get('/abonne/infos', 'AbonneInfos::index');
-
+$routes->get('/adminemprunt', 'AdminEmprunt::index');
+$routes->post('/adminempruntenregistrer', 'AdminEmprunt::enregistrer');
+$routes->get('/adminempruntsupprimer', 'AdminEmprunt::supprimer/$1');
 
 

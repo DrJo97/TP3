@@ -79,7 +79,7 @@
       <button onclick="location.href='/adminabonnes'">Gestion des abonnés</button>
       <button onclick="location.href='/adminlivres'">Gestion des livres</button>
       <button onclick="location.href='/adminexemplaires'">Gestion des exemplaires</button>
-      <button onclick="location.href='/emprunt'">Gestion des emprunts</button>
+      <button onclick="location.href='/adminemprunt'">Gestion des emprunts</button>
       <button onclick="location.href='/adminretours'">Gestion des retours</button>
       <button onclick="location.href='/admindemandes'">Gestion des demandes</button>
     </div>
